@@ -1,10 +1,6 @@
 % Last updated by Robert Kopp, robert-dot-kopp-at-rutgers-dot-edu, Thu Sep 03 22:07:53 EDT 2015
 
-try
-  if (matlabpool('size')==0) matlabpool; end
-catch
-  if isempty(gcp('nocreate')) parpool; end
-end
+if (exist('matlabpool','file') && matlabpool('size')==0) matlabpool; end
 
 % Load MiniCAM based scenario
 
